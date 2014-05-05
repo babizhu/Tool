@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
+    <file url="file://$PROJECT_DIR$/src/main/java/com/bbz/tool/common/CountMap.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/bbz/tool/common/MiscUtil.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/bbz/tool/common/RandomUtil.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/bbz/tool/common/Transform.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/bbz/tool/db/AbstractDataProviderWithIdentity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/bbz/tool/db/AbstractDataProviderWithUserName.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/bbz/tool/db/IdentityObj.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/bbz/tool/db/MongoUtil.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/bbz/tool/identity/IdentityDataProvider.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/bbz/tool/identity/IdentityGen.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/bbz/tool/time/SystemTimer.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/bbz/tool/time/TimeUtil.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/test/java/com/bbz/tool/common/MiscUtilTest.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/test/java/com/bbz/tool/common/RandomUtilTest.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/test/java/com/bbz/tool/common/TransformTest.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/test/java/com/bbz/tool/db/MongoUtilTest.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/test/java/com/bbz/tool/identity/IdentityGenTest.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/test/java/com/bbz/tool/time/TimeUtilTest.java" charset="UTF-8" />
+  </component>
+</project>
+
