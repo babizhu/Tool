@@ -34,6 +34,10 @@ public class TransformTest{
         String str = "1,2,3,4,5,6,7";
         int[] array = Transform.ArrayType.toInts( str );
         assertEquals( 7, array.length );
+
+        long[] longs = Transform.ArrayType.toLongs( str );
+        assertEquals( 7, longs.length );
+
         str = "";
         array = Transform.ArrayType.toInts( str );
         assertEquals( 0, array.length );

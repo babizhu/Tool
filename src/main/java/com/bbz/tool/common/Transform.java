@@ -39,7 +39,7 @@ public class Transform{
             return ret;
         }
 
-        public static long[] toLong( String input ){
+        public static long[] toLongs( String input ){
             if( input == null ) {
                 throw new IllegalArgumentException();
             }
