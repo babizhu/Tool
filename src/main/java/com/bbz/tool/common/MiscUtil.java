@@ -3,11 +3,17 @@ package com.bbz.tool.common;
 import java.nio.ByteBuffer;
 
 /**
- * user         LIUKUN
- * com.bbz.com.bbz.tool.com.bbz.com.bbz.tool.time         2014-3-28 15:13
+ * user         LIUKUN<br/>
+ * time         2014-3-28 15:13<br/>
+ * <p/>
+ * 杂项工具类
  */
 
 public class MiscUtil{
+
+    private MiscUtil(){
+
+    }
 
     /**
      * 从一个数组中，找到输入相应的位置，典型应用是通过经验获取等级

@@ -10,6 +10,9 @@ public class RandomUtil{
 
     private static Random r = new Random();
 
+    private RandomUtil(){
+    }
+
     /**
      * 随机获取一个[0,max)范围的整型数字
      *

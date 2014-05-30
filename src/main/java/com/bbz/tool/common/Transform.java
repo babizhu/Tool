@@ -11,6 +11,9 @@ import java.util.List;
  * 用返回值来进行区分，比如把一个整型数组转成一个Array就应该在Array静态类中，而把此整型数组转换为List则应该放在List中
  */
 public class Transform{
+
+    private Transform(){}
+
     public final static class ArrayType{
         /**
          * 把用"逗号"分隔的字符串转换为整型数组，例如：<br/>
