@@ -97,6 +97,12 @@ public class TransformTest{
             Transform.ListType.shuffle( copy );
             System.out.println( copy );
         }
+
+        List<Person> personList = new ArrayList<>(  );
+        personList.add( new Person( 12, "ll" ) );
+        personList.add( new Person( 13, "kk" ) );
+        personList.add( new Person( 14, "dd" ) );
+        System.out.println( Transform.StringType.toStr( personList ));
     }
 
     /**

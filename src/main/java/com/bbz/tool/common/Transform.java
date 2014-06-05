@@ -72,18 +72,18 @@ public class Transform{
         }
 
         /**
-         * 把一个整型List转换为用"逗号"分隔的字符串，例如：<br/>
+         * 把任意类型的List转换为用"逗号"分隔的字符串，例如：<br/>
          * [1 2 3 4 5 6 7 8 9] 输出"1,2,3,4,5,6,7,8,9"<br/>
          *
          * @param input 整型列表
          * @return 返回的字符串，如果输入长度为0，怎返回空字符串
          */
-        public static String toStr( List<Integer> input ){
+        public static <T> String toStr( List<T> input ){
             if( input == null || input.size() == 0 ) {
                 return "";
             }
             StringBuilder ret = new StringBuilder();
-            for( int i : input ) {
+            for( T i : input ) {
                 ret.append( i ).append( "," );
             }
             return ret.deleteCharAt( ret.length() - 1 ).toString();
