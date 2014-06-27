@@ -26,7 +26,7 @@ class DaemonThreadFactory implements ThreadFactory{
 public class SystemTimer{
     private static final ScheduledExecutorService s = Executors.newSingleThreadScheduledExecutor( new DaemonThreadFactory() );
     /**
-     * 执行的时间间隔，也就是说没50ms取一次系统时间
+     * 执行的时间间隔，也就是说每50ms取一次系统时间
      */
     private final static int TICK_UNIT = 50;
     private volatile static long time = System.currentTimeMillis();

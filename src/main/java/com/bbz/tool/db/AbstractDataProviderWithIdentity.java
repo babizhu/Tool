@@ -9,14 +9,17 @@ import java.util.Map;
 
 /**
  * user         LIUKUN
- * com.bbz.com.bbz.tool.com.bbz.com.bbz.tool.time         14-3-27 下午3:51
+ *     14-3-27 下午3:51
  * <p/>
  * 负责处理具有唯一id的实体类,构造函数包括2个，一个用户名，一个表名
+ * 通常一个玩家会有多条记录，比如英雄表
+ *
+ * 注意：重载encode()的方法时，不需要显式指定uname，add()方法会自动处理
  */
-
+@SuppressWarnings("UnusedDeclaration")
 public abstract class AbstractDataProviderWithIdentity<T extends IdentityObj>{
-    private final String uname;
-    private final DBCollection collection;
+    private final String        uname;
+    private final DBCollection  collection;
 
     /**
      * @param tableName 要处理的表名
@@ -52,7 +55,9 @@ public abstract class AbstractDataProviderWithIdentity<T extends IdentityObj>{
     }
 
     public void add( T t ){
-        collection.insert( encode( t ) );
+        DBObject obj = encode( t );
+        obj.put( "uname", getUname() );
+        collection.insert(  );
     }
 
     public List<T> getListAll(){
@@ -72,7 +77,6 @@ public abstract class AbstractDataProviderWithIdentity<T extends IdentityObj>{
     /**
      * 以id为key返回一个hashmap
      *
-     * @return
      */
     public Map<Long, T> getMapAll(){
         Map<Long, T> map = Maps.newHashMap();

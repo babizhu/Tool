@@ -7,7 +7,7 @@ import com.mongodb.WriteResult;
 
 /**
  * user         LIUKUN
- * com.bbz.com.bbz.tool.com.bbz.com.bbz.tool.time         14-3-27 下午3:51
+ * 2014-3-27 下午3:51
  * <p/>
  * 负责处理用户名为唯一标示符的数据结构，也就是说此数据在数据库中仅有一条记录，例如
  * 玩家信息（体力、元宝等），
