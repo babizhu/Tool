@@ -42,10 +42,28 @@ public class TimeUtilTest{
         int second = 1397013038;//"2014-04-09 11:10:38"
         DateTime time = TimeUtil.createBySecond( second );
         int remainSecond = TimeUtil.getRemainSecond( time );
-        assertEquals( 0, remainSecond );
+        assertEquals( 0, remainSecond );//一个过去的时间节点，肯定返回0
         time = new DateTime();
-        time = time.withFieldAdded( DurationFieldType.minutes(), 3 );//当前时间增加3分钟,180秒
+        //time = time.withFieldAdded( DurationFieldType.minutes(), 3 );
+        time = time.plusMinutes( 3 );//当前时间增加3分钟,180秒
         remainSecond = TimeUtil.getRemainSecond( time );
         assertEquals( 180, remainSecond );
+    }
+
+    @Test
+    public void getRemainMin() throws Exception{
+        int second = 1397013038;//"2014-04-09 11:10:38"
+        DateTime time = TimeUtil.createBySecond( second );
+        int remainMin = TimeUtil.getRemainMin( time );
+        assertEquals( 0, remainMin );
+        time = new DateTime();
+        time = time.withFieldAdded( DurationFieldType.minutes(), 3 );//当前时间增加3分钟,180秒
+        time.plusMinutes( 3 );
+        remainMin = TimeUtil.getRemainMin( time );
+        assertEquals( 3, remainMin );
+
+        time = time.plusMinutes( -3 );//还原
+        time = time.plusSeconds( 119 );//增加119秒
+        assertEquals(1, TimeUtil.getRemainMin( time ));
     }
 }

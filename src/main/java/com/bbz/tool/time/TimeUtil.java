@@ -5,9 +5,12 @@ import org.joda.time.LocalDate;
 
 /**
  * user         LIUKUN
- * com.bbz.com.bbz.tool.com.bbz.com.bbz.tool.time         2014-4-28 17:30
+ * 2014-4-28 17:30
  */
 
+/**
+ * 时间相关的工具类
+ */
 public class TimeUtil{
 
     public static final String DATA_FORMAT_STR = "yyyy-MM-dd HH:mm:ss";
@@ -44,13 +47,26 @@ public class TimeUtil{
     }
 
     /**
-     * 返回当前时间-输入时间的值，如果为负数则返回0
+     * 返回当前时间-输入时间的秒数，如果为负数则返回0
      *
      * @param dt 要比较的时间
      * @return 剩余的时间——秒数，小于0则返回0
      */
     public static int getRemainSecond( DateTime dt ){
         int ret = (int) (dt.getMillis() / 1000 - SystemTimer.currentTimeSecond());
+        return Math.max( 0, ret );
+    }
+
+    /**
+     * 返回当前时间-输入时间的分钟数，如果为负数则返回0
+     * 简单起见，是向下取整，也就是说119秒，返回1分钟
+     *
+     * @param dt 要比较的时间
+     * @return 剩余的时间——分钟数数，小于0则返回0
+     */
+    public static int getRemainMin( DateTime dt ){
+        int ret = (int) (dt.getMillis() / 1000 - SystemTimer.currentTimeSecond());
+        ret /= 60;
         return Math.max( 0, ret );
     }
 }

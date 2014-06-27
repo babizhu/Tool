@@ -60,6 +60,9 @@ public abstract class AbstractDataProviderWithIdentity<T extends IdentityObj>{
         collection.insert(  );
     }
 
+    /**
+     * 返回一个list，查询条件为玩家名
+     */
     public List<T> getListAll(){
         List<T> list = Lists.newArrayList();
 
@@ -75,7 +78,7 @@ public abstract class AbstractDataProviderWithIdentity<T extends IdentityObj>{
     }
 
     /**
-     * 以id为key返回一个hashmap
+     * 以id为key返回一个hashmap，查询条件为玩家名
      *
      */
     public Map<Long, T> getMapAll(){
