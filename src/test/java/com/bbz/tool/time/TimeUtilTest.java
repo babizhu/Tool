@@ -23,7 +23,7 @@ public class TimeUtilTest{
     @Test
     public void testCreateBySecond() throws Exception{
         int second = 0;
-        DateTime dt = TimeUtil.createBySecond( second );
+        DateTime dt = TimeUtil.createDateBySecond( second );
         System.out.println( TimeUtil.secondsToDateStr( (int) (dt.getMillis() / 1000) ) );
 
     }
@@ -40,7 +40,7 @@ public class TimeUtilTest{
     @Test
     public void getRemainSecond() throws Exception{
         int second = 1397013038;//"2014-04-09 11:10:38"
-        DateTime time = TimeUtil.createBySecond( second );
+        DateTime time = TimeUtil.createDateBySecond( second );
         int remainSecond = TimeUtil.getRemainSecond( time );
         assertEquals( 0, remainSecond );//一个过去的时间节点，肯定返回0
         time = new DateTime();
@@ -51,9 +51,17 @@ public class TimeUtilTest{
     }
 
     @Test
+    public void testStrToDate(){
+        String dateStr = "2014-4-8 12:45:6";
+        System.out.println( "data" + TimeUtil.createDateByStr( dateStr ));
+        dateStr = "2014-4-8 1:9:0";
+        System.out.println( "data" + TimeUtil.createDateByStr( dateStr ));
+    }
+
+    @Test
     public void getRemainMin() throws Exception{
         int second = 1397013038;//"2014-04-09 11:10:38"
-        DateTime time = TimeUtil.createBySecond( second );
+        DateTime time = TimeUtil.createDateBySecond( second );
         int remainMin = TimeUtil.getRemainMin( time );
         assertEquals( 0, remainMin );
         time = new DateTime();

@@ -166,7 +166,10 @@ public abstract class AbstractDataProviderWithUserName<T>{
      * false:插入
      */
     public boolean replace( T t ){
-        WriteResult save = collection.save( encode( t ) );
+        DBObject obj = encode( t );
+        obj.put( "_id", getUname() );
+
+        WriteResult save = collection.save( obj );
         return (Boolean) save.getField( "updatedExisting" );
     }
 
