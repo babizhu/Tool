@@ -28,17 +28,23 @@ public class TimeUtil{
         return new LocalDate().equals( compare );
     }
 
+
     /**
-     * 通过一个字符串创建出一个 DateTime 对象
-     * 字符串的规则 2014-04-09 11:10:38 或者 2014-04-09 1:0:38
-     *
-     * @param second 传入的秒数
-     * @return 时间对象
+     * 通过一个秒数创建出一个 DateTime 对象
+     * @param second    据1970的秒数
+     * @return
      */
     public static DateTime createDateBySecond( int second ){
         return new DateTime( second * 1000L );
     }
 
+    /**
+     * 通过一个字符串创建出一个 DateTime 对象
+     * 字符串的规则 2014-04-09 11:10:38 或者 2014-04-09 1:0:38
+     *
+     * @param str 传入的表述时间的字符串
+     * @return 时间对象
+     */
     public static DateTime createDateByStr( String str ){
         return DateTime.parse( str, DATA_PATTERN );
     }
