@@ -19,8 +19,8 @@ public class MiscUtil{
      * 从一个数组中，找到输入相应的位置，典型应用是通过经验获取等级
      * 举例如下<br/>
      * [25, 30, 35, 40, 45]，input=5
-     * beginWith=1      return 0，即玩家拥有5经验的时候，等级为<b>0</><br/>
-     * beginWith=0      return -1，即玩家拥有5经验的时候，等级为<b>-1</><br/>,这种情况一般是配置表有问题，data数组应该从0开始
+     * beginWith=1      return 0，即玩家拥有5经验的时候，等级为<b>0<br/>
+     * beginWith=0      return -1，即玩家拥有5经验的时候，等级为<b>-1<br/>,这种情况一般是配置表有问题，data数组应该从0开始
      *
      * @param data      等级数组数据  例如[0,10,20,50,100]
      * @param input     输入数据      例如   35
