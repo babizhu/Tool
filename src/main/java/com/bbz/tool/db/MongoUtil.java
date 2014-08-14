@@ -33,11 +33,19 @@ public enum MongoUtil{
     private DB db;
 
     MongoUtil(){
+        this("resource/mongo.properties");
+    }
+
+    /**
+     *
+     * @param configPath        配置文件路径
+     */
+    MongoUtil( String configPath ){
         Properties prop = new Properties();
         try {
             MongoClientOptions options = init();
 
-            InputStream in = new BufferedInputStream( new FileInputStream( "resource/mongo.properties" ) );
+           InputStream in = new BufferedInputStream( new FileInputStream( configPath ) );
             prop.load( in );
 
             String ip = prop.getProperty( "ip" ).trim();
