@@ -4,6 +4,7 @@ import com.google.common.base.CharMatcher;
 import com.google.common.collect.Lists;
 import com.google.common.primitives.Ints;
 
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -120,19 +121,21 @@ public class Transform{
          * @param input list
          */
         public static <T> void shuffle( List<T> input ){
-            if( input == null ) {
-                throw new IllegalArgumentException();
-            }
-            int size = input.size();
-            if( size < 2 ) {
-                return;
-            }
-            for( int i = 0; i < size; i++ ) {
-                int randomIndex = RandomUtil.getInt( size );
-                T temp = input.get( randomIndex );
-                input.set( randomIndex, input.get( i ) );
-                input.set( i, temp );
-            }
+//            if( input == null ) {
+//                throw new IllegalArgumentException();
+//            }
+//            int size = input.size();
+//            if( size < 2 ) {
+//                return;
+//            }
+//            for( int i = 0; i < size; i++ ) {
+//                int randomIndex = RandomUtil.getInt( size );
+//                T temp = input.get( randomIndex );
+//                input.set( randomIndex, input.get( i ) );
+//                input.set( i, temp );
+//            }
+
+           Collections.shuffle( input );
         }
     }
 
