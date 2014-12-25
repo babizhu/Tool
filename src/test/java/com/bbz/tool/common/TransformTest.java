@@ -98,11 +98,13 @@ public class TransformTest{
             System.out.println( copy );
         }
 
-        List<Person> personList = new ArrayList<>(  );
+//        Transform.ListType.shuffle( null );
+        List<Person> personList = new ArrayList<>();
         personList.add( new Person( 12, "ll" ) );
         personList.add( new Person( 13, "kk" ) );
         personList.add( new Person( 14, "dd" ) );
-        System.out.println( Transform.StringType.toStr( personList ));
+        System.out.println( Transform.StringType.toStr( personList ) );
+
     }
 
     /**
@@ -129,11 +131,14 @@ public class TransformTest{
         System.out.println( copy1 );
         System.out.println( list1 );
 
-        List<Integer> list2 = Lists.newArrayList( 1,2,3,4,5,6,7,8 );
+        List<Integer> list2 = Lists.newArrayList( 1, 2, 3, 4, 5, 6, 7, 8 );
         List<Integer> copy2 = Lists.newArrayList( list2 );
         copy2.set( 0, 555 );
         System.out.println( copy2 );
         System.out.println( list2 );
+
+
+        System.out.println();
 
     }
 }

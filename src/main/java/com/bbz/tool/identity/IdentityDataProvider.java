@@ -10,7 +10,7 @@ import com.mongodb.DBObject;
  * com.bbz.com.bbz.tool.com.bbz.com.bbz.tool.time         2014-3-28 17:19
  */
 
-public enum IdentityDataProvider{
+enum IdentityDataProvider{
     INSTANCE;
 
     private final String TABLE_NAME = "global_identity";

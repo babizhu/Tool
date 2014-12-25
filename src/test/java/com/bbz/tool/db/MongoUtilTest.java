@@ -18,7 +18,7 @@ public class MongoUtilTest{
     public void testAdd() throws Exception{
         collection.drop();
         long begin = System.nanoTime();
-        for( int i = 0; i < 100; i++ ) {
+        for( int i = 0; i < 10000; i++ ) {
             collection.insert( new BasicDBObject( "a" + i, "hellooooooooooooooooooooooo" + i ) );
         }
         System.out.println( "操作耗时：" + (System.nanoTime() - begin) / 1000000000f + "秒" );

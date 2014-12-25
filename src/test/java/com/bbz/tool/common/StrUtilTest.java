@@ -21,4 +21,22 @@ public class StrUtilTest{
 //        assertEquals( str, StrUtil.firstCharacterToUpper( str ) );
 
     }
+
+    @Test
+    public void testFirstCharacterToLower() throws Exception{
+        String str = "test";
+        assertEquals( "test", StrUtil.firstCharacterToLower( str ) );
+
+        str = "Test";
+        assertEquals( "test", StrUtil.firstCharacterToLower( str ) );
+
+        str = "";
+        assertEquals( "", StrUtil.firstCharacterToLower( str ) );
+
+//        str = null;
+//        assertEquals( str, StrUtil.firstCharacterToUpper( str ) );
+
+    }
+
+
 }

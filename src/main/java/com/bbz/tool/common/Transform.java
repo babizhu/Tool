@@ -117,25 +117,12 @@ public class Transform{
 
         /**
          * 把list的内容打乱，输入的字符串内容将会被改变
+         * 不允许输入null
          *
          * @param input list
          */
         public static <T> void shuffle( List<T> input ){
-//            if( input == null ) {
-//                throw new IllegalArgumentException();
-//            }
-//            int size = input.size();
-//            if( size < 2 ) {
-//                return;
-//            }
-//            for( int i = 0; i < size; i++ ) {
-//                int randomIndex = RandomUtil.getInt( size );
-//                T temp = input.get( randomIndex );
-//                input.set( randomIndex, input.get( i ) );
-//                input.set( i, temp );
-//            }
-
-           Collections.shuffle( input );
+            Collections.shuffle( input );
         }
     }
 

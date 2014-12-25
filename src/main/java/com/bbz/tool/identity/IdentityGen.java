@@ -4,7 +4,7 @@ import java.util.concurrent.atomic.AtomicLong;
 
 /**
  * user         LIUKUN
- * com.bbz.com.bbz.tool.com.bbz.com.bbz.tool.time         2014-3-28 17:11
+ *          2014-3-28 17:11
  *
  * 唯一id生成器，整个系统需要唯一id的时候都从这里取
  *

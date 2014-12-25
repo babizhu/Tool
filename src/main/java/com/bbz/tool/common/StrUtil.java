@@ -37,4 +37,32 @@ public class StrUtil{
                 .toString();
 
     }
+
+    /**
+     * 把首字母变成小写<p/>
+     *
+     * @param str 输入的字符串
+     * @return 首字母小写的字符串
+     * <p/>
+     * <p/>
+     * 如果输入字符串为null或者空字符，则原样返回
+     */
+    public static String firstCharacterToLower( String str ){
+        if( str == null ) {
+            throw new IllegalArgumentException();
+        }
+        if( str.isEmpty() ) {
+            return str;
+        }
+        if( Character.isLowerCase( str.charAt( 0 ) ) ) {
+            return str;
+        }
+        return (new StringBuilder())
+                .append( Character.toLowerCase( str.charAt( 0 ) ) )
+                .append( str.substring( 1 ) )
+                .toString();
+
+    }
+
+
 }
