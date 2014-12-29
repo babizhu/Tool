@@ -143,12 +143,12 @@ public abstract class AbstractDataProviderWithUserName<T>{
     /**
      * * 删除此表下的所有数据,慎用！！！！！！！！！！！！！！！！！
      *
-     * @param isRemoveAllData 确定要删除整个表的内容吗？
+     * @param isRemoveAllDBData 确定要删除整个表的内容吗？
      */
-    @SuppressWarnings("UnusedDeclaration")
-    public void removeAll( boolean isRemoveAllData ){
-        collection.drop();
-    }
+//    @SuppressWarnings("UnusedDeclaration")
+//    public void removeAll( boolean isRemoveAllDBData ){
+//        collection.drop();
+//    }
 
 //    /**
 //     * 删除表中所有的数据
