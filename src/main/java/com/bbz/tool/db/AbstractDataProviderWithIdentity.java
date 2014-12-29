@@ -57,7 +57,7 @@ public abstract class AbstractDataProviderWithIdentity<T extends IdentityObj>{
     public void add( T t ){
         DBObject obj = encode( t );
         obj.put( "uname", getUname() );
-        collection.insert(  );
+        collection.insert( obj );
     }
 
     /**
