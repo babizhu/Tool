@@ -16,6 +16,7 @@ import java.util.List;
  * Time: 下午4:11
  * 文件操作的工具类
  */
+@SuppressWarnings("UnusedDeclaration")
 public class FileUtil{
     /**
      * 读取path文件的所有内容到一个List<String>中
@@ -41,11 +42,12 @@ public class FileUtil{
 
     /**
      * 根据文件名删除文件
-     * @param path
+     * @param path      要删除文件的完整路径
      */
     public static void delFile( String path ){
         File file = new File( path );
         if( file.exists() ){
+            //noinspection ResultOfMethodCallIgnored
             file.delete();
         }
     }
@@ -83,6 +85,7 @@ public class FileUtil{
         File file = new File(path);
         if( !file.exists() ) {
             File p = new File(path.substring(0, path.lastIndexOf(File.separator)));
+            //noinspection ResultOfMethodCallIgnored
             p.mkdirs();
         }
         try {
