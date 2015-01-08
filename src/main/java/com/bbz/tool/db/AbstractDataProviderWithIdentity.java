@@ -90,6 +90,7 @@ public abstract class AbstractDataProviderWithIdentity<T extends IdentityObj>{
             while( cursor.hasNext() ) {
                 T t = decode( cursor.next() );
 //            cursor.next();
+
                 map.put( t.getId(), t );
             }
         }
@@ -101,6 +102,10 @@ public abstract class AbstractDataProviderWithIdentity<T extends IdentityObj>{
         collection.remove( conditon );
     }
 
+    /**
+     * 传统数据库的update，如果不存在查询条件所指定的记录，那么是不会主动insert记录的
+     * @param t     要更新的内容
+     */
     public void update( T t ){
         DBObject conditon = new BasicDBObject( "_id", t.getId() );
         collection.update( conditon, encode( t ) );

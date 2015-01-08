@@ -82,7 +82,7 @@ public class FileUtil{
     public static void writeTextFile(String path, String content){
         File file = new File(path);
         if( !file.exists() ) {
-            File p = new File(path.substring(0, path.lastIndexOf('/')));
+            File p = new File(path.substring(0, path.lastIndexOf(File.separator)));
             p.mkdirs();
         }
         try {
