@@ -97,8 +97,8 @@ public abstract class AbstractDataProviderWithIdentity<T extends IdentityObj>{
         return map;
     }
 
-    public void remove( int id ){
-        DBObject conditon = new BasicDBObject( "_id", id );
+    public void remove( IdentityObj obj ){
+        DBObject conditon = new BasicDBObject( "_id", obj.getId() );
         collection.remove( conditon );
     }
 
