@@ -64,5 +64,20 @@ public class StrUtil{
 
     }
 
+    /**
+     * 去掉字符串的最后一个字符，如果字符为null，或者长度为0则直接返回
+     *
+     * @param str       输入的字符串
+     * @return          输入为null，返回为null
+     */
+    public static String removeLastChar(String  str ){
+        if( str == null || str.isEmpty() ){
+            return str;
+        }
+
+        return str.substring( 0,str.length() - 1 );
+
+    }
+
 
 }

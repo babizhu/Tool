@@ -38,5 +38,17 @@ public class StrUtilTest{
 
     }
 
+    @Test
+    public void testRemoveLastChar(){
+        String str = "test";
+        assertEquals( "tes", StrUtil.removeLastChar( str ) );
+
+        str = "";
+        assertEquals( "", StrUtil.removeLastChar( str ) );
+
+        str = null;
+        assertEquals( null, StrUtil.removeLastChar( str ) );
+    }
+
 
 }
