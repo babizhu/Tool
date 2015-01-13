@@ -148,7 +148,9 @@ public abstract class AbstractDataProviderWithIdentity<T extends IdentityObj>{
      */
     public void update( T t ){
         DBObject conditon = new BasicDBObject( "_id", t.getId() );
-        collection.update( conditon, encode( t ) );
+        DBObject obj = encode( t );
+        obj.put( "uname", getUname() );
+        collection.update( conditon, obj );
     }
 
     /**
