@@ -78,6 +78,46 @@ public abstract class AbstractDataProviderWithIdentity<T extends IdentityObj>{
     }
 
     /**
+     * 返回一个list，传入查询条件，会默认添加玩家名条件
+     * @param conditions 传入条件
+     * @return List<T>
+     */
+    public List<T> getListAllBy(BasicDBObject conditions){
+        List<T> list = Lists.newArrayList();
+
+        conditions.append("uname", uname);
+
+        try( DBCursor cursor = collection.find( conditions ) ) {
+            while( cursor.hasNext() ) {
+//            cursor.next();
+                list.add( decode( cursor.next() ) );
+            }
+        }
+        return list;
+    }
+
+    /**
+     * 以id为key返回一个hashmap，传入查询条件，会默认添加玩家名条件
+     * @param conditions 传入条件
+     * @return Map
+     */
+    public Map<Long, T> getMapAllBy(BasicDBObject conditions){
+        Map<Long, T> map = Maps.newHashMap();
+
+        conditions.append("uname", uname);
+
+        try( DBCursor cursor = collection.find( conditions ) ) {
+            while( cursor.hasNext() ) {
+                T t = decode( cursor.next() );
+//            cursor.next();
+
+                map.put( t.getId(), t );
+            }
+        }
+        return map;
+    }
+
+    /**
      * 以id为key返回一个hashmap，查询条件为玩家名
      *
      */
