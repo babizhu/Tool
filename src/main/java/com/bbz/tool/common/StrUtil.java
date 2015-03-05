@@ -80,4 +80,18 @@ public class StrUtil{
     }
 
 
+    /**
+     * 去掉字符串的最后一个字符，如果字符为null，或者长度为0则直接返回
+     *
+     * @param sb       输入的字符串
+     * @return          输入为null，返回为null
+     */
+    public static StringBuilder removeLastChar(StringBuilder  sb ){
+        if( sb != null && sb.length() > 0 ){
+            sb.deleteCharAt( sb.length() - 1 );
+        }
+        return sb;
+
+    }
+
 }

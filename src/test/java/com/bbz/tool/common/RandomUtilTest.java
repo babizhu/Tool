@@ -26,19 +26,47 @@ public class RandomUtilTest{
         int num;
         for( int i = 0; i < 100; i++ ) {
 
-            num = RandomUtil.getInt( 1, 2 );
+            num = RandomUtil.getRange( 1, 2 );
             assertEquals( 1, num );
         }
         Integer min = 2;
         int max = 10;
         for( int i = 0; i < 1000; i++ ) {
 
-            num = RandomUtil.getInt( min, max );
+            num = RandomUtil.getRange( min, max );
             assertThat( num, Matchers.allOf( greaterThanOrEqualTo( min ), lessThan( max ) ) );
         }
 
     }
 
 
+    @Test
+    public void testGetInt2() throws Exception{
 
+    }
+
+    @Test
+    public void testGetInt3() throws Exception{
+
+    }
+
+    @Test
+    public void testIsHappen() throws Exception{
+        boolean happen = RandomUtil.isHappen( 100 );
+        assertEquals( true, happen );
+
+        happen = RandomUtil.isHappen( -100 );
+        assertEquals( false,happen );
+
+        happen = RandomUtil.isHappen( -0.1f );
+        assertEquals( false,happen );
+
+
+
+    }
+
+    @Test
+    public void testMain() throws Exception{
+
+    }
 }

@@ -47,10 +47,15 @@ public abstract class AbstractDataProviderWithIdentity<T extends IdentityObj>{
     public List<T> findBy( DBObject condition ){
         List<T> list = Lists.newArrayList();
 
-        DBCursor cursor = collection.find( condition );
-        while( cursor.hasNext() ) {
-            list.add( decode( cursor.next() ) );
+
+        try( DBCursor cursor = collection.find( condition ) ) {
+            while( cursor.hasNext() ) {
+//            cursor.next();
+                list.add( decode( cursor.next() ) );
+            }
         }
+
+
         return list;
     }
 
@@ -68,13 +73,7 @@ public abstract class AbstractDataProviderWithIdentity<T extends IdentityObj>{
 
         BasicDBObject condition = new BasicDBObject( "uname", uname );
 
-        try( DBCursor cursor = collection.find( condition ) ) {
-            while( cursor.hasNext() ) {
-//            cursor.next();
-                list.add( decode( cursor.next() ) );
-            }
-        }
-        return list;
+        return findBy( condition );
     }
 
     /**
@@ -87,13 +86,7 @@ public abstract class AbstractDataProviderWithIdentity<T extends IdentityObj>{
 
         conditions.append("uname", uname);
 
-        try( DBCursor cursor = collection.find( conditions ) ) {
-            while( cursor.hasNext() ) {
-//            cursor.next();
-                list.add( decode( cursor.next() ) );
-            }
-        }
-        return list;
+        return findBy( conditions );
     }
 
     /**
@@ -126,15 +119,7 @@ public abstract class AbstractDataProviderWithIdentity<T extends IdentityObj>{
 
         BasicDBObject condition = new BasicDBObject( "uname", uname );
 
-        try( DBCursor cursor = collection.find( condition ) ) {
-            while( cursor.hasNext() ) {
-                T t = decode( cursor.next() );
-//            cursor.next();
-
-                map.put( t.getId(), t );
-            }
-        }
-        return map;
+        return getMapAllBy( condition );
     }
 
     public void remove( IdentityObj obj ){

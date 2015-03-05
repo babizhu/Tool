@@ -30,7 +30,7 @@ public class RandomUtil{
      * @param max 上限（不包括）
      * @return 随机返回的数字
      */
-    public static int getInt( int min, int max ){
+    public static int getRange( int min, int max ){
         if( max <= min ) {
             throw new IllegalArgumentException( "max < min" );
         }
@@ -50,7 +50,4 @@ public class RandomUtil{
         return percent >= 1 || percent >= 0 && percent > r.nextFloat();
     }
 
-    public static void main( String[] args ){
-        RandomUtil.isHappen( 0.2f );
-    }
 }

@@ -48,6 +48,19 @@ public class StrUtilTest{
 
         str = null;
         assertEquals( null, StrUtil.removeLastChar( str ) );
+
+        StringBuilder sb = null;
+        assertEquals( null, StrUtil.removeLastChar( sb ) );
+
+        sb = new StringBuilder(  );
+        assertEquals( "", StrUtil.removeLastChar( sb ).toString() );
+
+        sb.append( "a" );
+        assertEquals( "", StrUtil.removeLastChar( sb ).toString() );
+
+        sb.append( "ab" );
+        assertEquals( "a", StrUtil.removeLastChar( sb ).toString() );
+
     }
 
 

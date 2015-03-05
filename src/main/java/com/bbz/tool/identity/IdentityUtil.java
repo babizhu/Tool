@@ -10,7 +10,7 @@ import com.mongodb.*;
  */
 
 public class IdentityUtil{
-    static long getMaxId( String tableName ){
+    public static long getMaxId( String tableName ){
         DBCollection collection = MongoUtil.INSTANCE.getDB().getCollection( tableName );
 
 //        QueryBuilder query = new QueryBuilder();
